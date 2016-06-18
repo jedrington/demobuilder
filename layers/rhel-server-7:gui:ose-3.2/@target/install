@@ -4,8 +4,7 @@
 
 MY_HOSTNAME=openshift.example.com
 
-register_channels rhel-7-server-rpms rhel-7-server-extras-rpms
-register_channels rhel-7-server-ose-3.2-rpms
+register_channels rhel-7-server-rpms rhel-7-server-extras-rpms rhel-7-server-ose-3.2-rpms
 # curl -so /etc/yum.repos.d/auto-puddle.repo http://download.eng.bos.redhat.com/rcm-guest/puddles/RHAOS/AtomicOpenShift/3.2/2016-05-10.1/puddle.repo
 
 yum_install atomic-openshift bind-utils docker lsof openshift-ansible-playbooks PyPAM net-tools nmap-ncat strace tcpdump unzip
