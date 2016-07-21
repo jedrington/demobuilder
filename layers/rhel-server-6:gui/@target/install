@@ -27,3 +27,13 @@ lokkit -p 22:tcp
 lokkit -p 5900:tcp
 
 sed -i -e 's/id:3:initdefault:/id:5:initdefault:/' /etc/inittab
+
+mkdir -p /home/demo/.config/autostart
+cat >>/home/demo/.config/autostart/vncconfig.desktop <<EOF
+[Desktop Entry]
+Name=vncconfig
+Type=Application
+Exec=vncconfig -nowin
+X-GNOME-Autostart-enabled=true
+EOF
+chown -R demo:demo /home/demo/.config

@@ -50,6 +50,16 @@ sed -i -e '/load-module.*bluetooth/ s/^/#/' /etc/pulse/default.pa
 
 sed -i -e 's/"dateMenu", //' /usr/share/gnome-shell/modes/classic.json
 
+mkdir -p /home/demo/.config/autostart
+cat >>/home/demo/.config/autostart/vncconfig.desktop <<EOF
+[Desktop Entry]
+Name=vncconfig
+Type=Application
+Exec=vncconfig -nowin
+X-GNOME-Autostart-enabled=true
+EOF
+chown -R demo:demo /home/demo/.config
+
 cat >>/usr/local/bin/demobuilder-cleanup.sh <<EOF
 rm -f /var/lib/NetworkManager/dhclient-*-eth0.lease
 EOF

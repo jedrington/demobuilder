@@ -48,3 +48,13 @@ for dest in password-auth system-auth; do
   cp pam-auth-demobuilder /etc/pam.d/$dest-demobuilder
   ln -sf $dest-demobuilder /etc/pam.d/$dest
 done
+
+mkdir -p /home/demo/.config/autostart
+cat >>/home/demo/.config/autostart/vncconfig.desktop <<EOF
+[Desktop Entry]
+Name=vncconfig
+Type=Application
+Exec=vncconfig -nowin
+X-GNOME-Autostart-enabled=true
+EOF
+chown -R demo:demo /home/demo/.config
